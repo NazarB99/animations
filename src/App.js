@@ -28,10 +28,21 @@ class App extends Component{
         )
     }
 
+    renderNoMoreCards(){
+        return(
+            <Card
+                title="No more cards!"
+            >
+                <Text style={{marginBottom:10}}>You swiped all cards!</Text>
+                <Button backgroundColor="#03A9F4" title="Load more"/>
+            </Card>
+        )
+    }
+
     render(){
         return(
             <View>
-                <Deck data={DATA} renderCard={this.renderCard} />
+                <Deck renderNoMoreCards={this.renderNoMoreCards()} data={DATA} renderCard={this.renderCard} />
             </View>
         )
     }
